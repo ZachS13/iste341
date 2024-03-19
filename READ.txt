@@ -1,5 +1,3 @@
 Github for the ISTE 341 - Server Programming
 
 Notes should be taken in here or in google docs
-
-checking to see if i need to log in to github on every push
