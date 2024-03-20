@@ -1,31 +1,31 @@
 <?php
-// has the user logged in already
+session_start();
+
+// Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    // back to the login page
-    header("Location; login.php");
+    // Back to the login page
+    header("Location: login.php");
     exit();
 }
 
-// get the role of the user
+// Get the user role
 $userRole = $_SESSION['role'];
 
-// is the user an admin
+// Change the what's on the page depending on the user
 if ($userRole == 'admin') {
-    // PAGE FOR THE ADMIN
-    // something to add a new user
-    // something to delete a user
-    // viewing all of the current projects
-}
-// is the user a manager
-if ($userRole == 'manager') {
-    // PAGE FOR THE MANAGER
-    // viewing all of the current projects
-}
-// is it just a regular user
-else {
-    // PAGE FOR THE USER
-    // viewing all of the projects they are assigned to (should only be one)
-    // on the press of the project they should be able to view the bug page for the project
-    // 
+    // Page for the Admin
+    // Display something to add a new user
+    // Display something to delete a user
+    // Display all current projects
+    echo "Welcome, Admin!";
+} elseif ($userRole == 'manager') {
+    // Page for the Manager
+    // Display all current projects
+    echo "Welcome, Manager!";
+} else {
+    // Page for the User
+    // Display all projects the user is assigned to (should only be one)
+    // On click of a project, allow viewing the bug page for the project
+    echo "Welcome, User!";
 }
 ?>
